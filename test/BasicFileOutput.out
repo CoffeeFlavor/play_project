@@ -1,0 +1,27 @@
+1: package com.example.demo;
+2: 
+3: import java.io.*;
+4: 
+5: /**
+6:  * User: jennie
+7:  * Date: 2017/10/10
+8:  * Time: 15:25
+9:  */
+10: public class BasicFileOutput {
+11:     static String file = "BasicFileOutput.out";
+12: 
+13:     public static void main(String[] args) {
+14:         try {
+15:             BufferedReader in = new BufferedReader(new StringReader(BufferedInputFile.read("F:\\play_project\\test\\src\\main\\java\\com\\example\\demo\\BasicFileOutput.java")));
+16:             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+17:             int lineCount = 1;
+18:             String s;
+19:             while ((s = in.readLine()) != null)
+20:                 out.print(lineCount++ + ": " + s+"\n");
+21:             out.close();
+22:             System.out.println(BufferedInputFile.read(file));
+23:         } catch (IOException e) {
+24:             e.printStackTrace();
+25:         }
+26:     }
+27: }
