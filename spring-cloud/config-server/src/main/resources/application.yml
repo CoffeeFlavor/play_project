@@ -6,7 +6,16 @@ spring:
       server:
         git:
           uri: https://github.com/CoffeeFlavor/SpringcloudConfig.git
+          search-paths: respo
           default-label: master
-
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
 server:
   port: 8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
